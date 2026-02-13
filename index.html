@@ -7,12 +7,83 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <header>
-        
+<body class="bg-radial-[at_50%_75%] from-sky-200 to-blue-500 from-20% min-h-screen">
+    <header class="flex py-2 justify-between sticky top-0 z-50 backdrop-blur-lg shadow-sm">
+        <div>
+            <img src="https://images.unsplash.com/photo-1580788404954-ae4e4bdc9061?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="logo" class="rounded-full w-15">
+            <!-- credit : https://unsplash.com/@photosbychalo -->
+        </div>
+
+        <nav class="place-content-center">
+            <ul class="flex gap-1.5 mr-5">
+                <li><a href="" target="_self" class="border rounded p-2 bg-slate-50">Home</a></li>
+                <li><a href="profile.html" target="_self" class="border rounded p-2 bg-slate-50">Profile</a></li>
+                <li><a href="https://github.com/MuhammadYussi" target="_blank" class="border rounded p-2 bg-slate-50">Portofolio</a></li>
+                <li><a href="#form" class="border rounded p-2 scroll-smooth bg-slate-50">Message Us</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
+        <section class="bg-[url(https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center bg-no-repeat h-[578px] w-full mask-b-from-80% mask-b-to-100%">
+            <!-- credit : https://unsplash.com/@33bevanda -->
+            <div class="bg-white/80 w-fit p-2 rounded-br-4xl shadow-xl/30">
+                <h1 class="text-4xl font-medium">Hi <span>User</span>, Welcome To My Website</h1>
+                <p class="text-l">This project is intended for coding camp activities.</p>
+            </div>
+        </section>
 
+        <section>
+            <h1 class="flex justify-center text-4xl font-medium">Available Location</h1>
+            <hr class="mt-3 mx-70 border-1">
+            <section class="flex justify-center gap-10 p-10">
+                <div class="flex flex-col items-center cursor-pointer hover:opacity-80 hover:font-bold">
+                    <img src="https://images.unsplash.com/photo-1653798402576-a82513fa52c1?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="jakarta" class="rounded-full w-[250px]">
+                    <!-- credit : https://unsplash.com/@prasetyobi -->
+                    <p>Jakarta</p>
+                </div>
+
+                <div class="flex flex-col items-center cursor-pointer hover:opacity-80 hover:font-bold">
+                    <img src="https://images.unsplash.com/photo-1723299482335-4a25d2835330?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="bandung" class="rounded-full w-[250px]">
+                    <!-- credit : https://unsplash.com/@setiawand -->
+                    <p>Yogyakarta</p>
+                </div>
+
+                <div class="flex flex-col items-center cursor-pointer hover:opacity-80 hover:font-bold">
+                    <img src="https://images.unsplash.com/photo-1723893803150-6d176d521b64?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="surabaya" class="rounded-full w-[250px]">
+                    <!-- credit : https://unsplash.com/@annoying_salman -->
+                    <p>Tangerang</p>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <hr class="my-5 border-1">
+
+            <section class="flex justify-around">
+                <form id="form" class="p-5 ml-5 border border-solid border-2 w-[750px] rounded-sm bg-slate-50">
+                    <label>Nama :</label>
+                    <input type="text" placeholder="Nama" class="border rounded-sm m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 placeholder:text-center" required>
+                    <br>
+                    <label>Tanggal Lahir :</label>
+                    <input type="date" placeholder="Tanggal Lahir" class="border rounded-xl m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 placeholder:text-center" required">
+                    <br>
+                    <label>Jenis Kelamin :</label>
+                    <input type="radio" name="gender" value="Pria"> Laki-laki
+                    <input type="radio" name="gender" value="Wanita"> Perempuan
+                    <br>
+                    <label>Pesan :</label>
+                    <br>
+                    <textarea rows="5" placeholder="Pesan" class="border rounded-sm focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 w-full mb-2"></textarea>
+                    <br>
+                    <input type="submit" class="border rounded p-1">
+                </form>
+                <div class="p-5 ml-5 border border-solid border-2 w-[750px] rounded-sm">
+                    <li>
+                        <ul></ul>
+                    </li>
+                </div>
+            </section>
+        </section>
     </main>
     <footer>
 
