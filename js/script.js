@@ -3,6 +3,16 @@ const messageList = document.getElementById('message');
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
 
+window.onload = function() {
+    let name = prompt("Please enter your name:", "Guest");
+
+    if (name === null || name.trim() === "") {
+        name = "Guest";
+    }
+
+    document.getElementById("user").innerText = name;
+};
+
 menuBtn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
 });
