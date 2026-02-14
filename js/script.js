@@ -1,28 +1,39 @@
 const form = document.getElementById('form');
-const displayList = document.getElementById('message');
+const messageList = document.getElementById('message');
+const menuBtn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
 
-form.addEventListener('submit', function (event) {
+menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+});
+
+menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+            menu.classList.add('hidden');
+        }
+    });
+});
+
+form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     const nama = form.querySelector('input[type="text"]').value;
     const tglLahir = form.querySelector('input[type="date"]').value;
-    const gender = form.querySelector('input[type="radio"]').value;
+    const gender = form.querySelector('input[name="gender"]:checked').value;
     const pesan = form.querySelector('textarea').value;
-    
-    const now = new Date();
-    const dateTimeString = now.toLocaleString();
+    const currentTime = new Date().toLocaleString();
 
-    const listItem = document.createElement('ul');
-    listItem.className = "mb-4 p-3 border-b border-black/20 last:border-0";
+    const listItem = document.createElement('li');
+    listItem.className = "mb-4 p-3 border-b border-slate-200 last:border-0 animate-fadeIn";
     
-    listItem.innerHTML = 
-        `<small class="text-gray-500 italic">${dateTimeString}</small>
+    listItem.innerHTML = `
+        <p class="text-xs text-slate-500">${currentTime}</p>
         <p><strong>Nama:</strong> ${nama}</p>
-        <p><strong>Tgl Lahir:</strong> ${tglLahir}</p>
-        <p><strong>Gender:</strong> ${gender}</p>
-        <p><strong>Pesan:</strong> ${pesan}</p>`;
+        <p><strong>Tanggal Lahir:</strong> ${tglLahir}</p>
+        <p><strong>Jenis Kelamin:</strong> ${gender}</p>
+        <p class="mt-2 italic">"${pesan}"</p>`;
 
-    displayList.appendChild(listItem);
-
+    messageList.prepend(listItem);
     form.reset();
 });

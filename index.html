@@ -7,25 +7,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-radial-[at_50%_75%] from-sky-200 to-blue-500 from-20% min-h-screen">
-    <header class="flex py-2 justify-between sticky top-0 z-50 backdrop-blur-lg shadow-sm">
+    <header class="flex py-2 px-5 justify-between items-center sticky top-0 z-50 backdrop-blur-lg shadow-sm">
         <div>
-            <img src="https://images.unsplash.com/photo-1580788404954-ae4e4bdc9061?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="logo" class="rounded-full w-15">
-            <!-- credit : https://unsplash.com/@photosbychalo -->
+            <img src="https://images.unsplash.com/photo-1580788404954-ae4e4bdc9061?q=80&w=880&auto=format&fit=crop" alt="logo" class="rounded-full w-12">
         </div>
 
-        <nav class="place-content-center">
-            <ul class="flex gap-1.5 mr-5">
-                <li><a href="" target="_self" class="border rounded p-2 bg-slate-50">Home</a></li>
-                <li><a href="profile.html" target="_self" class="border rounded p-2 bg-slate-50">Profile</a></li>
-                <li><a href="https://github.com/MuhammadYussi" target="_blank" class="border rounded p-2 bg-slate-50">Portofolio</a></li>
-                <li><a href="#form" class="border rounded p-2 scroll-smooth bg-slate-50">Message Us</a></li>
+        <button id="menu-btn" class="block md:hidden focus:outline-none cursor-pointer">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+
+        <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white/95 md:static md:flex md:w-auto md:bg-transparent shadow-md md:shadow-none">
+            <ul class="flex flex-col md:flex-row gap-4 p-5 md:p-0 md:mr-5">
+                <li><a href="#" class="block border rounded p-2 bg-slate-50 hover:bg-sky-100">Home</a></li>
+                <li><a href="profile.html" class="block border rounded p-2 bg-slate-50 hover:bg-sky-100">Profile</a></li>
+                <li><a href="https://github.com/MuhammadYussi" target="_blank" class="block border rounded p-2 bg-slate-50 hover:bg-sky-100">Portfolio</a></li>
+                <li><a href="#form" class="block border rounded p-2 bg-slate-50 hover:bg-sky-100">Message Us</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="bg-[url(https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center bg-no-repeat h-[578px] w-full mask-b-from-80% mask-b-to-100%">
             <!-- credit : https://unsplash.com/@33bevanda -->
@@ -61,36 +66,47 @@
 
         <section>
             <hr class="my-5 border-1">
-
-            <section class="flex justify-around">
-                <form id="form" class="p-5 ml-5 border border-solid border-2 w-[750px] rounded-sm bg-slate-50">
-                    <label>Nama :</label>
-                    <input type="text" placeholder="Nama" class="border rounded-sm m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-red-500 focus:invalid:outline-red-500 focus:invalid:text-red-500 placeholder:text-center" required>
-                    <br>
-                    <label>Tanggal Lahir :</label>
-                    <input type="date" placeholder="Tanggal Lahir" class="border rounded-xl m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-red-500 focus:invalid:outline-red-500 placeholder:text-center" required>
-                    <br>
-                    <label>Jenis Kelamin :</label>
-                    <input type="radio" name="gender" value="Pria" class="focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-red-500 focus:invalid:outline-red-500" required> Laki-laki
-                    <input type="radio" name="gender" value="Wanita"> Perempuan
-                    <br>
-                    <label>Pesan :</label>
-                    <br>
-                    <textarea rows="5" placeholder="Pesan" class="border rounded-sm focus:outline focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 w-full mb-2"></textarea>
-                    <br>
-                    <input type="submit" class="border rounded p-1">
-                </form>
-                <div class="p-5 ml-5 border border-solid border-2 w-[750px] rounded-sm max-h-[400px] overflow-y-auto bg-white/50">
-                    <ul id="message">
-                    </ul>
+            <section class="flex flex-col md:flex-row justify-around gap-6 p-5">
+    
+            <form id="form" class="p-5 border-2 border-solid w-full md:max-w-[750px] rounded-sm bg-slate-50 shadow-sm">
+                <div class="mb-4">
+                    <label class="block mb-1 font-medium">Nama :</label>
+                    <input type="text" placeholder="Nama" class="w-full border rounded-sm p-2 focus:outline-sky-500 user-invalid:border-red-500 user-invalid:text-red-500" required>
                 </div>
-            </section>
+
+                <div class="mb-4">
+                    <label class="block mb-1 font-medium text-slate-700">Tanggal Lahir :</label>
+                    <input type="date" class="w-full border rounded-xl p-2 focus:outline-sky-500 focus:ring-2 focus:ring-sky-200 user-invalid:border-red-500 appearance-none" required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-1 font-medium">Jenis Kelamin :</label>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="gender" value="Pria" class="user-invalid:outline-red-500" required> Laki-laki</label>
+                        <label><input type="radio" name="gender" value="Wanita"> Perempuan</label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-1 font-medium">Pesan :</label>
+                    <textarea rows="5" placeholder="Pesan" 
+                        class="w-full border rounded-sm p-2 focus:outline-sky-500 user-invalid:border-red-500 w-full" 
+                        required></textarea>
+                </div>
+
+                <input type="submit" class="w-full md:w-auto border rounded px-6 py-2 bg-white hover:bg-slate-100 cursor-pointer transition-colors">
+            </form>
+
+            <div class="p-5 border-2 border-solid w-full md:max-w-[750px] rounded-sm overflow-y-auto bg-white/50">
+                <h3 class="font-bold mb-2 border-b">Messages:</h3>
+                <ul id="message"></ul>
+            </div>
         </section>
     </main>
 
     <hr class="mt-5">
 
-    <footer class="bg-white/60 p-2 rounded-bl-lg shadow-xl/30">
+    <footer class="bg-white/60 p-2 rounded-bl-lg shadow-xl/30 border-y-auto">
         <p class="flex justify-end">&copy; 2026 Muhammad Yussi. All rights reserved.</p>
     </footer>
     <script src="./js/script.js"></script>
