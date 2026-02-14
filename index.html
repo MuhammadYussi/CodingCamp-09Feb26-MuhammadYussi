@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-radial-[at_50%_75%] from-sky-200 to-blue-500 from-20% min-h-screen">
@@ -62,32 +65,34 @@
             <section class="flex justify-around">
                 <form id="form" class="p-5 ml-5 border border-solid border-2 w-[750px] rounded-sm bg-slate-50">
                     <label>Nama :</label>
-                    <input type="text" placeholder="Nama" class="border rounded-sm m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 placeholder:text-center" required>
+                    <input type="text" placeholder="Nama" class="border rounded-sm m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-red-500 focus:invalid:outline-red-500 focus:invalid:text-red-500 placeholder:text-center" required>
                     <br>
                     <label>Tanggal Lahir :</label>
-                    <input type="date" placeholder="Tanggal Lahir" class="border rounded-xl m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 placeholder:text-center" required">
+                    <input type="date" placeholder="Tanggal Lahir" class="border rounded-xl m-2 focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-red-500 focus:invalid:outline-red-500 placeholder:text-center" required>
                     <br>
                     <label>Jenis Kelamin :</label>
-                    <input type="radio" name="gender" value="Pria"> Laki-laki
+                    <input type="radio" name="gender" value="Pria" class="focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-red-500 focus:invalid:outline-red-500" required> Laki-laki
                     <input type="radio" name="gender" value="Wanita"> Perempuan
                     <br>
                     <label>Pesan :</label>
                     <br>
-                    <textarea rows="5" placeholder="Pesan" class="border rounded-sm focus:outline focus:text-sky-500 focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 w-full mb-2"></textarea>
+                    <textarea rows="5" placeholder="Pesan" class="border rounded-sm focus:outline focus:outline-sky-500 focus:invalid:border-sky-500 focus:invalid:outline-sky-500 w-full mb-2"></textarea>
                     <br>
                     <input type="submit" class="border rounded p-1">
                 </form>
-                <div class="p-5 ml-5 border border-solid border-2 w-[750px] rounded-sm">
-                    <li>
-                        <ul></ul>
-                    </li>
+                <div class="p-5 ml-5 border border-solid border-2 w-[750px] rounded-sm max-h-[400px] overflow-y-auto bg-white/50">
+                    <ul id="message">
+                    </ul>
                 </div>
             </section>
         </section>
     </main>
-    <footer>
 
+    <hr class="mt-5">
+
+    <footer class="bg-white/60 p-2 rounded-bl-lg shadow-xl/30">
+        <p class="flex justify-end">&copy; 2026 Muhammad Yussi. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
